@@ -1,0 +1,95 @@
+#sidebar {
+  z-index: 999 !important;
+  position: absolute;
+  width: 380px;
+  max-height: calc(100vh - 20px);
+  overflow-y: scroll;
+  background-color: white;
+  top: 10px;
+  left: 10px;
+  opacity: 0.95;
+}
+
+
+.leaflet-control-layers.driver-fix-stacking {
+  z-index: 999 !important;
+}
+
+.square {
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.leaflet-interactive:hover {
+  opacity: 0.8;
+}
+
+label {
+  cursor: pointer;
+}
+
+label:hover {
+  opacity: 0.8;
+}
+
+.subgroup {
+  margin-bottom: 10px;
+}
+
+.main-in-group:checked ~ span {
+  font-weight: bold;
+  color: rgba(0,0,0,0.8);
+}
+
+hr {
+  border-top: 1px solid #333;
+  border-bottom: 0;
+}
+
+#activeAreaCalculator {
+  position: absolute;
+  top: 10px;
+  width: 340px;
+  margin-left: -170px;
+  left: 50%;
+  z-index: 999;
+  font-size: 0.95em;
+}
+
+.leaflet-control-layers-expanded {
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+#resetFilters {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.leaflet-tooltip {
+  width: 230px;
+  white-space: normal !important;
+}
+
+/* Tooltip title */
+.t-t {
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,0.5);
+  font-size: 1em;
+}
+
+.t-t:not(:first-child) {
+  margin-top: 5px;
+}
+
+#driver-popover-item {
+  max-width: 450px !important;
+}
+
+.bb-dotted {
+  border-bottom: 1px dotted #333;
+}

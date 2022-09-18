@@ -500,7 +500,7 @@ var initMap = function() {
   $.getJSON('./data/towns.min.geojson', loadTowns);
 
   // Load main data GeoJSON with zones
-  $.getJSON('./data/final.20220427.geojson', loadZones);
+  $.getJSON('./data/final.geojson', loadZones);
 
   // Add hash
   var hash = new L.Hash(map);

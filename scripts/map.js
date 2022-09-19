@@ -511,6 +511,9 @@ var initMap = function () {
 	// Load main data GeoJSON with zones
 	$.getJSON('./data/final.geojson', loadZones)
 
+	// Add hash
+	var hash = new L.Hash(map)
+
 	// Add color polygons to legend
 	addColorPolygonsToLegend()
 

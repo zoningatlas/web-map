@@ -52,8 +52,6 @@ var loadZones = function (geojson) {
 		onEachFeature: function (feature, layer) {
 			var pp = feature.properties
 
-			console.log(feature.properties);
-
 			// On layer click, select town
 			layer.on('click', function () {
 				var townClicked = pp[zTown]
@@ -323,9 +321,6 @@ var calculateActiveArea = function () {
 	satisfiesAcres = parseInt(satisfiesAcres).toLocaleString()
 	totalAcres = parseInt(totalAcres).toLocaleString()
 
-	console.log(demographics);
-	console.log(townActive);
-
 	$('#activeAreaCalculator').html(
 		'<p class="ma0 mb2">' +
 			satisfiesAcres +
@@ -371,8 +366,28 @@ var loadTransit = function () {
 				interactive: false,
 			})
 		});
+
+		// The following was written by Mike A.
+		$.getJSON('./data/rail-transit-line.geojson', geojson => {
+			var transitLines = geojson.features.map(function (o) {
+				return o.geometry.coordinates.map((oo) => {
+					oo = oo.map((e) => e.reverse());
+					return L.polyline(oo, {
+						weight: 1,
+						color: 'pink',
+						opacity: 0.9,
+						interactive: false,
+					})
+				});
+			});
+
+			overlays['transit'] = L.layerGroup(
+				transitMarkers
+					.concat(transitCircles)
+					.concat(transitLines.flat())
+				);
+		});
 	
-		overlays['transit'] = L.layerGroup(transitMarkers.concat(transitCircles));
 	});
 }
 

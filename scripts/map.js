@@ -288,7 +288,7 @@ var loadTowns = function (bounds) {
 		pane: 'overlays',
 		interactive: false,
 		style: townStyle,
-	});
+	})
 
 	towns.addTo(map)
 }
@@ -349,13 +349,12 @@ var calculateActiveArea = function () {
  * Creates a layer group of rail/fastrak markers from `transit.js` data.
  */
 var loadTransit = function () {
-
 	$.getJSON('./data/rail-transit.geojson', (geojson) => {
 		var transitMarkers = geojson.features.map(function (o) {
-			return L.marker(o.geometry.coordinates.reverse());
+			return L.marker(o.geometry.coordinates.reverse())
 		})
-	
-		var transitCircles = geojson.features.map(function (o) {	
+
+		var transitCircles = geojson.features.map(function (o) {
 			return L.circle(o.geometry.coordinates, {
 				radius: 804.5, // half a mile, in meters
 				weight: 1,
@@ -365,30 +364,27 @@ var loadTransit = function () {
 				fillOpacity: 0.2,
 				interactive: false,
 			})
-		});
+		})
 
 		// The following was written by Mike A.
-		$.getJSON('./data/rail-transit-line.geojson', geojson => {
+		$.getJSON('./data/rail-transit-line.geojson', (geojson) => {
 			var transitLines = geojson.features.map(function (o) {
 				return o.geometry.coordinates.map((oo) => {
-					oo = oo.map((e) => e.reverse());
+					oo = oo.map((e) => e.reverse())
 					return L.polyline(oo, {
 						weight: 1,
 						color: 'pink',
 						opacity: 0.9,
 						interactive: false,
 					})
-				});
-			});
+				})
+			})
 
 			overlays['transit'] = L.layerGroup(
-				transitMarkers
-					.concat(transitCircles)
-					.concat(transitLines.flat())
-				);
-		});
-	
-	});
+				transitMarkers.concat(transitCircles).concat(transitLines.flat())
+			)
+		})
+	})
 }
 
 var loadHydro = function () {
@@ -440,7 +436,7 @@ var loadSewer = function () {
 }
 
 var loadFederalState = function () {
-	$.getJSON('./data/federal-state.min.geojson', function (geojson) {
+	$.getJSON('./data/federal-state-dissolve.geojson', function (geojson) {
 		var stripes = new L.StripePattern({
 			height: 2,
 			width: 2,
@@ -540,10 +536,10 @@ var initMap = function () {
 	map.getPane('overlays').style.zIndex = 501
 
 	// Add overlays
-	loadTransit();
-	loadHydro();
-	loadSewer();
-	loadFederalState();
+	loadTransit()
+	loadHydro()
+	loadSewer()
+	loadFederalState()
 
 	// Add Esri geocoder
 	var searchControl = L.esri.Geocoding.geosearch({

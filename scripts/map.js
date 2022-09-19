@@ -454,7 +454,7 @@ var initMap = function () {
 		zoomControl: false,
 		tap: false,
 		maxZoom: 15,
-	}).setView([21.451331, -158.015281], 11)
+	}).setView([21.4191, 202.0198], 12)
 
 	L.control.zoom({ position: 'topright' }).addTo(map)
 
@@ -510,9 +510,6 @@ var initMap = function () {
 
 	// Load main data GeoJSON with zones
 	$.getJSON('./data/final.geojson', loadZones)
-
-	// Add hash
-	var hash = new L.Hash(map)
 
 	// Add color polygons to legend
 	addColorPolygonsToLegend()

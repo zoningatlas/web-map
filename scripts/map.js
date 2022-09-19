@@ -454,7 +454,7 @@ var initMap = function () {
 		zoomControl: false,
 		tap: false,
 		maxZoom: 15,
-	}).setView([21.4191, 202.0198], 12)
+	}).setView([19.8968, -155.5828], 12)
 
 	L.control.zoom({ position: 'topright' }).addTo(map)
 

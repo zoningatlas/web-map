@@ -100,6 +100,7 @@ var loadZones = function (geojson) {
 
 	// Turn on federal/state land by default
 	$('input[name="Overlay"][value="fs"]').prop('checked', true)
+	$('input[name="Overlay"][value="transit"]').prop('checked', true)
 
 	// Add selected overlays to the map
 	$('input[name="Overlay"]:checked').each(function (i, el) {
@@ -348,29 +349,42 @@ var calculateActiveArea = function () {
  * Creates a layer group of rail/fastrak markers from `transit.js` data.
  */
 var loadTransit = function () {
-	var transitMarkers = transit.map(function (o) {
-		return L.marker([o.Latitude, o.Longitude], {
-			icon: L.icon({
-				iconUrl: 'img/' + o.Mode + '.png',
-				iconSize: o.Mode === 'rail' ? [24, 24] : [16, 16],
-				iconAnchor: o.Mode === 'rail' ? [12, 12] : [8, 8],
-			}),
-		}).bindTooltip(o.Name + '<br> <em class="ttc">' + o.Mode + '</em>')
-	})
+	$.getJSON('./data/rail-transit.geojson', (geojson) => {
+		var transitMarkers = geojson.features.map(function (o) {
+			return L.marker(o.geometry.coordinates.reverse())
+		})
 
-	var transitCircles = transit.map(function (o) {
-		return L.circle([o.Latitude, o.Longitude], {
-			radius: 804.5, // half a mile, in meters
-			weight: 1,
-			color: 'white',
-			fillColor: 'white',
-			opacity: 0.9,
-			fillOpacity: 0.2,
-			interactive: false,
+		var transitCircles = geojson.features.map(function (o) {
+			return L.circle(o.geometry.coordinates, {
+				radius: 804.5, // half a mile, in meters
+				weight: 1,
+				color: 'pink',
+				fillColor: 'pink',
+				opacity: 0.9,
+				fillOpacity: 0.2,
+				interactive: false,
+			})
+		})
+
+		// The following was written by Mike A.
+		$.getJSON('./data/rail-transit-line.geojson', (geojson) => {
+			var transitLines = geojson.features.map(function (o) {
+				return o.geometry.coordinates.map((oo) => {
+					oo = oo.map((e) => e.reverse())
+					return L.polyline(oo, {
+						weight: 1,
+						color: 'pink',
+						opacity: 0.9,
+						interactive: false,
+					})
+				})
+			})
+
+			overlays['transit'] = L.layerGroup(
+				transitMarkers.concat(transitCircles).concat(transitLines.flat())
+			)
 		})
 	})
-
-	overlays['transit'] = L.layerGroup(transitCircles.concat(transitMarkers))
 }
 
 var loadHydro = function () {
@@ -422,7 +436,7 @@ var loadSewer = function () {
 }
 
 var loadFederalState = function () {
-	$.getJSON('./data/federal-state.min.geojson', function (geojson) {
+	$.getJSON('./data/federal-state-dissolve.geojson', function (geojson) {
 		var stripes = new L.StripePattern({
 			height: 2,
 			width: 2,
@@ -506,7 +520,7 @@ var initMap = function () {
 	setFilters()
 
 	// Load town boundaries
-	$.getJSON('./data/towns.min.geojson', loadTowns)
+	$.getJSON('./data/counties.geojson', loadTowns)
 
 	// Load main data GeoJSON with zones
 	$.getJSON('./data/final.geojson', loadZones)

@@ -44,8 +44,8 @@ var loadZones = function (geojson) {
 
 	dataLayer = L.geoJSON(geojson, {
 		attribution:
-			'data by <a href="https://www.desegregatect.org/">Desegregate CT</a>,\
-      map development by <a href="https://ctdata.org">CTData Collaborative</a>',
+			'data by <a href="https://www.codeforhawaii.org/">Kind Volunteers @ Code for Hawaii</a>,\
+      map development by <a href="https://codeforhawaii.org">Code for Hawaii</a>',
 		style: function (feature) {
 			return style(filters, feature)
 		},
@@ -100,7 +100,7 @@ var loadZones = function (geojson) {
 
 	// Turn on federal/state land by default
 	$('input[name="Overlay"][value="fs"]').prop('checked', true)
-	$('input[name="Overlay"][value="transit"]').prop('checked', true)
+	$('input[name="Overlay"][value="transit"]').prop('checked', false)
 
 	// Add selected overlays to the map
 	$('input[name="Overlay"]:checked').each(function (i, el) {

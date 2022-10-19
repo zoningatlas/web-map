@@ -3,5 +3,11 @@
     Contact: tcchong [at] hawaii.edu
     GitHub: @tyliec
 
+    Sous Chef: Kurt Malley
+    Contact: kjmalley7 [at] gmail.com
+    GitHub: @kmal808
+    Twitter: @kmal808
+    Location: Makakilo, Hawaii (USA) 
+
 /* SITE */
 	Last update: 2022/09/20

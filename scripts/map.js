@@ -331,8 +331,8 @@ var calculateActiveArea = function () {
 			demographics[townActive].income.toLocaleString() +
 			'<br>HH Income</span><span class="black-50 dib w-third fl tc" title="Black, Indigenous, People of Color">' +
 			'<span class="material-icons v-top" style="font-size:16px">people_alt</span> ' +
-			demographics[townActive].bipoc +
-			'%<br>BIPOC</span><span class="black-50 dib fl ml2 tr" title="Cost-Burdened Households">' +
+			demographics[townActive].nativeHawaiian +
+			'%<br>Native Hawaiian</span><span class="black-50 dib fl ml2 tr" title="Cost-Burdened Households">' +
 			'<span class="material-icons v-top" style="font-size:16px">toll</span> ' +
 			demographics[townActive].burdened +
 			'%<br>Cost-Burdened</span>' +
@@ -576,8 +576,8 @@ var initMap = function () {
 			popover: {
 				title: 'What are the Zoning Districts?',
 				description:
-					'We have put the zoning districts in each town into one of three categories: \
-          <ul><li><strong>Primarily Residential</strong>: Districts where housing is the main use. They may also include things you might find in residential neighborhoods, like schools and churches.  We included farming-residential districts in rural towns in this category.</li>\
+					'We have put the zoning districts in each county into one of three categories: \
+          <ul><li><strong>Primarily Residential</strong>: Districts where housing is the main use. They may also include things you might find in residential neighborhoods, like schools and churches.  We included agricultural-residential districts in this category.</li>\
           <li> <strong>Mixed with Residential</strong>: Districts where housing and retail, office, or other commercial uses mix together. They are typically districts around our “main streets” or in areas meant to be developed flexibly.</li>\
           <li> <strong>Nonresidential</strong>: Districts where housing is not allowed to be an independent use. However, some nonresidential districts allow accessory dwelling units, like an apartment for a night watchman in a factory setting.</li></ul>',
 				position: 'right',
@@ -602,10 +602,10 @@ var initMap = function () {
 		{
 			element: '#map',
 			popover: {
-				title: 'Click the Map to Learn About Your Town',
+				title: 'Click the Map to Learn About Your County',
 				description:
 					'Click the map for the popup to appear on top of the map. It will tell you what percent of land satisfies your selection criteria, as well as\
-          median household income, the percent of people cost-burdened (spending 30% or more of their income on housing), and what percent of the population identifies as Black, Indigenous, or as a person of color (BIPOC).',
+          median household income, the percent of people cost-burdened (spending 30% or more of their income on housing), and what percent of the population identifies as Native Hawaiian.',
 				position: 'mid-center',
 			},
 			onNext: function () {
@@ -619,9 +619,8 @@ var initMap = function () {
 			popover: {
 				title: 'Explore the Overlays',
 				description:
-					'You can toggle between the <strong>Transit and Waterways \
-          Overlays</strong> to visualize areas within a half mile of passenger rail and \
-          CT<i>fastrak</i>, as well as bodies of water within the state.',
+					'You can toggle between the <strong>Transit and Public Lands \
+          Overlays</strong> to visualize areas within a half mile of passenger rail (<i>HART</i>), as well as land owned by the Federal/State government entities.',
 				position: 'right',
 			},
 		},

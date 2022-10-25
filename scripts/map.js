@@ -52,6 +52,9 @@ var loadZones = function (geojson) {
 		onEachFeature: function (feature, layer) {
 			var pp = feature.properties
 
+			console.log(pp);
+			// break;
+
 			// On layer click, select town
 			layer.on('click', function () {
 				var townClicked = pp[zTown]

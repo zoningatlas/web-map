@@ -69,7 +69,7 @@ var loadZones = function (geojson) {
 				if (townActive) {
 					// Fit town to center
 					towns.eachLayer(function (l) {
-						if (l.feature.properties.NAME10 === townActive) {
+						if (l.feature.properties.name20 === townActive) {
 							map.fitBounds(l.getBounds())
 							setTimeout(updateUrl, 500)
 						}
@@ -271,9 +271,9 @@ var addColorPolygonsToLegend = function () {
  */
 var townStyle = function (feature) {
 	return {
-		stroke: feature.properties.NAME10 === townActive ? 5 : 2,
-		color: feature.properties.NAME10 === townActive ? 'yellow' : 'white',
-		opacity: feature.properties.NAME10 === townActive ? 1 : 0.4,
+		stroke: feature.properties.name20 === townActive ? 5 : 2,
+		color: feature.properties.name20 === townActive ? 'yellow' : 'white',
+		opacity: feature.properties.name20 === townActive ? 1 : 0.4,
 		fillOpacity: 0,
 		fillColor: 'rgba(0,0,0,0)',
 	}

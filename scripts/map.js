@@ -445,6 +445,7 @@ var loadFederalState = function () {
 			angle: 30,
 			color: '#5cc649',
 		})
+		
 		stripes.addTo(map)
 
 		overlays['fs'] = L.geoJSON(geojson, {
@@ -456,6 +457,8 @@ var loadFederalState = function () {
 				fillPattern: stripes,
 			},
 		})
+
+		overlays["fs"].addTo(map)
 	})
 }
 

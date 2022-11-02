@@ -544,23 +544,23 @@ var initMap = function () {
 	loadFederalState()
 
 	// Add Esri geocoder
-	var searchControl = L.esri.Geocoding.geosearch({
-		position: 'topright',
-		allowMultipleResults: false,
-		searchBounds: [
-			[40.98, -73.74],
-			[42.04, -71.78],
-		],
-	}).addTo(map)
+	// var searchControl = L.esri.Geocoding.geosearch({
+	// 	position: 'topright',
+	// 	allowMultipleResults: false,
+	// 	searchBounds: [
+	// 		[40.98, -73.74],
+	// 		[42.04, -71.78],
+	// 	],
+	// }).addTo(map)
 
-	var results = L.layerGroup().addTo(map)
+	// var results = L.layerGroup().addTo(map)
 
-	searchControl.on('results', function (data) {
-		results.clearLayers()
-		for (var i = data.results.length - 1; i >= 0; i--) {
-			results.addLayer(L.marker(data.results[i].latlng))
-		}
-	})
+	// searchControl.on('results', function (data) {
+	// 	results.clearLayers()
+	// 	for (var i = data.results.length - 1; i >= 0; i--) {
+	// 		results.addLayer(L.marker(data.results[i].latlng))
+	// 	}
+	// })
 
 	// Start tour
 	var driver = new Driver({

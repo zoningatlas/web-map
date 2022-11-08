@@ -1,5 +1,3 @@
-# Hawaii Zoning Atlas
-
 <h1 align="center">Hawaii Zoning Atlas</h1>
 
 <div align="center">

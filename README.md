@@ -14,6 +14,10 @@
   	<a href="https://hawaiizoningatlas.com">
       Website
     </a>
+    <span> | </span>
+    <a href="https://github.com/CodeforHawaii/Hawaii-Zoning-Atlas/wiki">
+      Wiki
+    </a>
   </h3>
 </div>
 

@@ -539,8 +539,8 @@ var initMap = function () {
 
 	// Add overlays
 	loadTransit()
-	loadHydro()
-	loadSewer()
+	// loadHydro()
+	// loadSewer()
 	loadFederalState()
 
 	// Add Esri geocoder

@@ -387,23 +387,30 @@ var loadTransit = function () {
 }
 
 var loadHydro = function () {
-	$.getJSON('./data/hydro.min.geojson', function (geojson) {
+	$.getJSON('./data/hydro.geojson', function (geojson) {
 		var stripes = new L.StripePattern({
 			height: 2,
 			width: 2,
 			weight: 1,
 			spaceWeight: 1,
 			angle: -45,
-			color: '#C6DDFF',
+			color: '#acbdd9',
+			spaceColor: '#9cb4dc',
+			opacity: 0.5,
+			spaceOpacity: 0.5,
 		})
 		stripes.addTo(map)
 
+		console.log(geojson)
+
 		overlays['hydro'] = L.geoJSON(geojson, {
 			interactive: false,
-			stroke: false,
+			stroke: true,
+			color: '#acbdd9',
+			weight: 0.5,
 			pane: 'overlays',
 			style: {
-				fillOpacity: 1,
+				fillOpacity: 0.3,
 				fillPattern: stripes,
 			},
 		})
@@ -413,10 +420,10 @@ var loadHydro = function () {
 var loadSewer = function () {
 	$.getJSON('./data/sewer.min.geojson', function (geojson) {
 		var stripes = new L.StripePattern({
-			height: 4,
-			width: 4,
+			height: 2,
+			width: 2,
 			weight: 1,
-			spaceWeight: 3,
+			spaceWeight: 1,
 			angle: 45,
 			color: '#e8f99d',
 		})
@@ -444,7 +451,7 @@ var loadFederalState = function () {
 			angle: 30,
 			color: '#5cc649',
 		})
-		
+
 		stripes.addTo(map)
 
 		overlays['fs'] = L.geoJSON(geojson, {
@@ -457,7 +464,7 @@ var loadFederalState = function () {
 			},
 		})
 
-		overlays["fs"].addTo(map)
+		overlays['fs'].addTo(map)
 	})
 }
 

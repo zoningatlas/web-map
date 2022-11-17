@@ -394,7 +394,7 @@ var loadHydro = function () {
 			weight: 1,
 			spaceWeight: 1,
 			angle: -45,
-			color: '#acbdd9',
+			color: '#C6DDFF',
 			spaceColor: '#9cb4dc',
 			opacity: 0.5,
 			spaceOpacity: 0.5,
@@ -406,11 +406,11 @@ var loadHydro = function () {
 		overlays['hydro'] = L.geoJSON(geojson, {
 			interactive: false,
 			stroke: true,
-			color: '#acbdd9',
+			color: '#C6DDFF',
 			weight: 0.5,
 			pane: 'overlays',
 			style: {
-				fillOpacity: 0.3,
+				fillOpacity: 1,
 				fillPattern: stripes,
 			},
 		})
@@ -547,7 +547,7 @@ var initMap = function () {
 	// Add overlays
 	loadTransit()
 	loadHydro()
-	loadSewer()
+	// loadSewer()
 	loadFederalState()
 
 	// Add Esri geocoder

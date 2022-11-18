@@ -387,34 +387,37 @@ var loadTransit = function () {
 }
 
 var loadHydro = function () {
-	$.getJSON('./data/hydro.geojson', function (geojson) {
-		var stripes = new L.StripePattern({
-			height: 2,
-			width: 2,
-			weight: 1,
-			spaceWeight: 1,
-			angle: -45,
-			color: '#C6DDFF',
-			spaceColor: '#9cb4dc',
-			opacity: 0.5,
-			spaceOpacity: 0.5,
-		})
-		stripes.addTo(map)
+	$.getJSON(
+		'./data/wetlands_and_streams_simplified.geojson',
+		function (geojson) {
+			var stripes = new L.StripePattern({
+				height: 2,
+				width: 2,
+				weight: 1,
+				spaceWeight: 1,
+				angle: -45,
+				color: '#C6DDFF',
+				spaceColor: '#9cb4dc',
+				opacity: 0.5,
+				spaceOpacity: 0.5,
+			})
+			stripes.addTo(map)
 
-		console.log(geojson)
+			console.log(geojson)
 
-		overlays['hydro'] = L.geoJSON(geojson, {
-			interactive: false,
-			stroke: true,
-			color: '#C6DDFF',
-			weight: 0.5,
-			pane: 'overlays',
-			style: {
-				fillOpacity: 1,
-				fillPattern: stripes,
-			},
-		})
-	})
+			overlays['hydro'] = L.geoJSON(geojson, {
+				interactive: false,
+				stroke: true,
+				color: '#C6DDFF',
+				weight: 0.5,
+				pane: 'overlays',
+				style: {
+					fillOpacity: 1,
+					fillPattern: stripes,
+				},
+			})
+		}
+	)
 }
 
 var loadSewer = function () {

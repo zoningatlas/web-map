@@ -388,7 +388,7 @@ var loadTransit = function () {
 
 var loadHydro = function () {
 	$.getJSON(
-		'./data/wetlands_and_streams_simplified.geojson',
+		'./data/NHD_hydro_20_percent_min.geojson',
 		function (geojson) {
 			var stripes = new L.StripePattern({
 				height: 2,

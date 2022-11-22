@@ -403,7 +403,6 @@ var loadHydro = function () {
 			})
 			stripes.addTo(map)
 
-			console.log(geojson)
 
 			overlays['hydro'] = L.geoJSON(geojson, {
 				interactive: false,

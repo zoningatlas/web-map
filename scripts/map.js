@@ -386,6 +386,7 @@ var loadTransit = function () {
 	})
 }
 
+//* creates a layer of hydrology features
 var loadHydro = function () {
 	$.getJSON(
 		'./data/hydro.min.geojson',
@@ -470,6 +471,43 @@ var loadFederalState = function () {
 	})
 }
 
+//* creates a layer for the county of Kaua'i, which at this time we do not have zoning GIS data for
+//* will be removed once zoning shapefiles are available
+
+var loadKauai = function () {
+	$.getJSON(
+		'./data/kauai-parcels.geojson',
+		function (geojson) {
+			var stripes = new L.StripePattern({
+				height: 2,
+				width: 2,
+				weight: 1.5,
+				spaceWeight: 1,
+				angle: -45,
+				color: 'rgb(186, 108, 164)',
+				spaceColor: '#9cb4dc',
+				opacity: 0.9,
+				spaceOpacity: 0.5,
+			})
+			stripes.addTo(map)
+
+
+			overlays['kauai'] = L.geoJSON(geojson, {
+				interactive: true,
+				stroke: false,
+				color: 'rgb(186, 108, 164)',
+				weight: 0.5,
+				pane: 'overlays',
+				style: {
+					fillOpacity: 0.9,
+					fillPattern: stripes,
+				},
+			}).bindTooltip("Kauai County 🏗️ Under Construction").addTo(map)
+		}
+	)
+}
+
+
 /**
  * This function initializes the map. It should be called as soon as
  * DOM is loaded.
@@ -547,6 +585,7 @@ var initMap = function () {
 	map.getPane('overlays').style.zIndex = 501
 
 	// Add overlays
+	loadKauai()
 	loadTransit()
 	loadHydro()
 	// loadSewer()

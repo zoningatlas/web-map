@@ -99,7 +99,8 @@ var loadZones = function (geojson) {
 	}).addTo(map)
 
 	// Turn on federal/state land by default
-	$('input[name="Overlay"][value="fs"]').prop('checked', true)
+	$('input[name="Overlay"][value="federal"]').prop('checked', true)
+	$('input[name="Overlay"][value="state"]').prop('checked', true)
 	$('input[name="Overlay"][value="DHHL"]').prop('checked', true)
 
 	// Add selected overlays to the map
@@ -421,6 +422,7 @@ var loadHydro = function () {
 	)
 }
 
+// todo: add sewerlines overlay
 var loadSewer = function () {
 	$.getJSON('./data/sewer.min.geojson', function (geojson) {
 		var stripes = new L.StripePattern({
@@ -445,20 +447,21 @@ var loadSewer = function () {
 	})
 }
 
-var loadFederalState = function () {
-	$.getJSON('./data/federal-state-dissolve.geojson', function (geojson) {
+//* federal land overlay
+var loadFederal = function () {
+	$.getJSON('./data/federal-land.min.geojson', function (geojson) {
 		var stripes = new L.StripePattern({
 			height: 2,
 			width: 2,
 			weight: 1,
 			spaceWeight: 1,
 			angle: 30,
-			color: '#5cc649',
+			color: '#b349c6',
 		})
 
 		stripes.addTo(map)
 
-		overlays['fs'] = L.geoJSON(geojson, {
+		overlays['federal'] = L.geoJSON(geojson, {
 			interactive: false,
 			stroke: false,
 			pane: 'overlays',
@@ -468,7 +471,35 @@ var loadFederalState = function () {
 			},
 		})
 
-		overlays['fs'].addTo(map)
+		overlays['federal'].addTo(map)
+	})
+}
+
+//* state land overlay
+var loadState = function () {
+	$.getJSON('./data/state-land.min.geojson', function (geojson) {
+		var stripes = new L.StripePattern({
+			height: 2,
+			width: 2,
+			weight: 1,
+			spaceWeight: 1,
+			angle: 30,
+			color: '#b349c6',
+		})
+
+		stripes.addTo(map)
+
+		overlays['state'] = L.geoJSON(geojson, {
+			interactive: false,
+			stroke: false,
+			pane: 'overlays',
+			style: {
+				fillOpacity: 1,
+				fillPattern: stripes,
+			},
+		})
+
+		overlays['state'].addTo(map)
 	})
 }
 
@@ -624,7 +655,8 @@ var initMap = function () {
 	loadTransit()
 	loadHydro()
 	// loadSewer()
-	loadFederalState()
+	loadFederal()
+	loadState()
 
 	// Add Esri geocoder
 	// var searchControl = L.esri.Geocoding.geosearch({

@@ -456,7 +456,7 @@ var loadFederal = function () {
 			weight: 1,
 			spaceWeight: 1,
 			angle: 30,
-			color: '#5cc649',
+			color: '#b349c6',
 		})
 
 		stripes.addTo(map)
@@ -484,7 +484,7 @@ var loadState = function () {
 			weight: 1,
 			spaceWeight: 1,
 			angle: 30,
-			color: '#5cc649',
+			color: '#b349c6',
 		})
 
 		stripes.addTo(map)

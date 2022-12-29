@@ -740,8 +740,7 @@ var initMap = function () {
 			popover: {
 				title: 'Explore the Overlays',
 				description:
-					'You can toggle between the <strong>Transit and Public Lands \
-          Overlays</strong> to visualize areas within a half mile of passenger rail (<i>HART</i>), as well as land owned by the Federal/State government entities.',
+					'Toggle the checkbox to add or remove map overlays. The overlays include Waterways, Federally owned lands, State owned lands, Dept of Hawaiian Homelands owned lands, and Transit Stations (Rail). Hover over each option for more details.',
 				position: 'right',
 			},
 		},

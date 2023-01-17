@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Code for Hawaii
+    url: https://github.com/CodeforHawai/discussions
+    about: Start a conversation here
+  - name: Code for Hawaii website
+    url: https://codeforhawaii.org
+    about: Contact us through our website form

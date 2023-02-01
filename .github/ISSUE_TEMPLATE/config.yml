@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Community
+    url: https://github.com/CodeforHawaii/discussions
+    about: Start a conversation here
+  - name: Contact
+    url: mailto:info@codeforhawaii.org
+    about: Contact us here

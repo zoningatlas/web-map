@@ -1,6 +1,5 @@
 var map // Global variable to store the Leaflet map
 var towns // GeoJSON layer for town boundaries
-var house // GeoJSON layer for house boundaries
 var townActive // Selected town name
 
 var dataLayer // GeoJSON layer with district data

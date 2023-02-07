@@ -422,6 +422,32 @@ var loadHydro = function () {
 	)
 }
 
+/*
+ * Given house GeoJSON file in `bounds`, adds non-interactive house boundaries
+ * layer to the map
+ */
+var loadHouse = function () {
+	$.getJSON(
+		'./data/Hawaii_State_House_Districts_2022.geojson',
+		function (geojson) {
+			overlays['house'] = L.geoJSON(geojson, {
+				interactive: true,
+				stroke: true,
+				color: '#C6DDFF',
+				weight: 1,
+				pane: 'overlays',
+				style: {
+					fillOpacity: 0,
+				},
+			})
+			
+			overlays['house'].eachLayer(function(layer) {
+				layer.bindPopup(layer.feature.properties.state_house)
+			});
+		}
+	)
+}
+
 // todo: add sewerlines overlay
 var loadSewer = function () {
 	$.getJSON('./data/sewer.min.geojson', function (geojson) {
@@ -654,6 +680,7 @@ var initMap = function () {
 	loadDHHL()
 	loadTransit()
 	loadHydro()
+	loadHouse()
 	// loadSewer()
 	loadFederal()
 	loadState()

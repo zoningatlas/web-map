@@ -18,7 +18,7 @@
             hash = hash.substr(1);
         }
         var args = hash.split("/");
-        if (args.length == 3) {
+        if (args.length >= 3) {
             var zoom = parseInt(args[0], 10),
                 lat = parseFloat(args[1]),
                 lon = parseFloat(args[2]);
@@ -40,9 +40,13 @@
             zoom = map.getZoom(),
             precision = Math.max(0, Math.ceil(Math.log(zoom) / Math.LN2));
 
+        var currentHash = location.hash.split('/');
+        var filtersHash = currentHash.length >= 4 ? currentHash.slice(3).join('/') : null;
+
         return "#" + [zoom,
             center.lat.toFixed(precision),
-            center.lng.toFixed(precision)
+            center.lng.toFixed(precision),
+            filtersHash
         ].join("/");
     },
 

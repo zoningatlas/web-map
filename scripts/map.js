@@ -98,10 +98,6 @@ var loadZones = function (geojson) {
     },
   }).addTo(map)
 
-  // Turn off federal/state land by default
-  $('input[name="Overlay"][value="federal"]').prop('checked', false)
-  $('input[name="Overlay"][value="state"]').prop('checked', false)
-  $('input[name="Overlay"][value="DHHL"]').prop('checked', false)
 
   // Add selected overlays to the map
   $('input[name="Overlay"]:checked').each(function (i, el) {

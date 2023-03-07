@@ -717,84 +717,86 @@ var initMap = function () {
   })
   // Define the steps for introduction
   driver.defineSteps([
+  
     {
       element: "#HiZoningAtlas",
       popover: {
         title: "Hawaii Zoning Atlas",
-        description: "Zoning is the most important local law you've never heard of. Zoning defines where buildings can go, how large they can be, what they can be used for, and more. The current zoning laws prioritize single-family homes on large lots in much of the state, contributing to urban sprawl, traffic congestion, and rising housing costs. Our team read the complete zoning codes for all 4 counties and built this interactive map to show where housing can and can't be built across the state. We hope policymakers and housing advocates can use our data to make housing more affordable and equitable.",
+        description:
+          "Zoning is the most important local law you've never heard of. Zoning defines where buildings can go, how large they can be, what they can be used for, and more. The current zoning laws prioritize single-family homes on large lots in much of the state, contributing to urban sprawl, traffic congestion, and rising housing costs. Our team read the complete zoning codes for all 4 counties and built this interactive map to show where housing can and can't be built across the state. We hope policymakers and housing advocates can use our data to make housing more affordable and equitable.",
         position: "right",
       },
     },
     {
-      element: '#TypeOfZoningDistrict',
+      element: "#TypeOfZoningDistrict",
       popover: {
-        title: 'What are the Zoning Districts?',
+        title: "What are the Zoning Districts?",
         description:
-          'We have put the zoning districts in each county into one of three categories: \
+          "We have put the zoning districts in each county into one of three categories: \
           <ul><li><strong>Primarily Residential</strong>: Districts where housing is the main use. They may also include things you might find in residential neighborhoods, like schools and churches.  We included agricultural-residential districts in this category.</li>\
           <li> <strong>Mixed with Residential</strong>: Districts where housing and retail, office, or other commercial uses mix together. They are typically districts around our “main streets” or in areas meant to be developed flexibly.</li>\
-          <li> <strong>Nonresidential</strong>: Districts where housing is not allowed to be an independent use. However, some nonresidential districts allow caretaker units, like an apartment for a night watchman in a factory setting.</li></ul>',
-        position: 'right',
+          <li> <strong>Nonresidential</strong>: Districts where housing is not allowed to be an independent use. However, some nonresidential districts allow caretaker units, like an apartment for a night watchman in a factory setting.</li></ul>",
+        position: "right",
       },
     },
     {
-      element: '#PermittedResidentialUses',
+      element: "#PermittedResidentialUses",
       popover: {
-        title: 'Select Permitted Residential Uses',
+        title: "Select Permitted Residential Uses",
         description:
-          '<p>Select one or more of the <strong>Permitted Residential Uses</strong> from the menu on the left-hand side of this screen. The purple and pink hues on the map will show you what kind of zoning district the chosen residential use appears in.</p>\
-        <p>Explore the specific conditions under which your selected Permitted Residential Use is allowed, like <strong>minimum lot size</strong> requirements, <strong>public hearing</strong> requirements, or restrictions for <strong>elderly housing</strong>.</p>',
-        position: 'right',
+          "<p>Select one or more of the <strong>Permitted Residential Uses</strong> from the menu on the left-hand side of this screen. The purple and pink hues on the map will show you what kind of zoning district the chosen residential use appears in.</p>\
+        <p>Explore the specific conditions under which your selected Permitted Residential Use is allowed, like <strong>minimum lot size</strong> requirements, <strong>public hearing</strong> requirements, or restrictions for <strong>elderly housing</strong>.</p>",
+        position: "right",
       },
       onNext: function () {
         // Make sure calculator displays on top of map in the next step
-        driver.preventMove()
-        $('#activeAreaCalculator').css('z-index', '110000')
-        driver.moveNext()
+        driver.preventMove();
+        $("#activeAreaCalculator").css("z-index", "110000");
+        driver.moveNext();
       },
     },
     {
-      element: '#map',
+      element: "#map",
       popover: {
-        title: 'Click the Map to Learn About Your County',
+        title: "Click the Map to Learn About Your County",
         description:
-          'Click the map for the popup to appear on top of the map. It will tell you what percent of land satisfies your selection criteria, as well as\
-          median household income, the percent of people cost-burdened (spending 30% or more of their income on housing), and what percent of the population identifies as Native Hawaiian.',
-        position: 'mid-center',
+          "Click the map for the popup to appear on top of the map. It will tell you what percent of land satisfies your selection criteria, as well as\
+          median household income, the percent of people cost-burdened (spending 30% or more of their income on housing), and what percent of the population identifies as Native Hawaiian.",
+        position: "mid-center",
       },
       onNext: function () {
-        driver.preventMove()
-        $('#activeAreaCalculator').css('z-index', '999')
-        driver.moveNext()
+        driver.preventMove();
+        $("#activeAreaCalculator").css("z-index", "999");
+        driver.moveNext();
       },
     },
     {
-      element: '#Overlays',
+      element: "#Overlays",
       popover: {
-        title: 'Explore the Overlays',
+        title: "Explore the Overlays",
         description:
-          'Toggle the checkbox to add or remove map overlays. The overlays include Waterways, Federally owned lands, State owned lands, Dept of Hawaiian Homelands owned lands, and Transit Stations (Rail). Hover over each option for more details.',
-        position: 'right',
+          "Toggle the checkbox to add or remove map overlays. The overlays include Waterways, Federally owned lands, State owned lands, Dept of Hawaiian Homelands owned lands, and Transit Stations (Rail). Hover over each option for more details.",
+        position: "right",
       },
     },
     {
-      element: '.leaflet-control-layers-list',
+      element: ".leaflet-control-layers-list",
       popover: {
-        title: 'Change the Basemap',
+        title: "Change the Basemap",
         description:
           'Would you prefer to view the Atlas from a bird\'s eye view? Click "Satellite" at the bottom right in the map.',
-        position: 'top-right',
+        position: "top-right",
       },
     },
     {
-      element: '#ZoneOpacity',
+      element: "#ZoneOpacity",
       popover: {
-        title: 'Adjust Zone Opacity',
-        description: 'Move the slider to adjust zoning layer transparency.',
-        position: 'right',
+        title: "Adjust Zone Opacity",
+        description: "Move the slider to adjust zoning layer transparency.",
+        position: "right",
       },
     },
-  ])
+  ]);
   // Start the introduction
   driver.start()
 }

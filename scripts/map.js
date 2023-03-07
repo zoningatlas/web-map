@@ -6,11 +6,11 @@ var dataLayer // GeoJSON layer with district data
 var overlays = {} // An object to contain overlay layer groups, eg `transit`
 
 var zone2color = {
-  R: '#645097', // primarily residential, satisfied
-  M: '#815196', // mixed with residential, satisfied
-  N: '#BA6CA4', // nonresidential, satisfied
-  NS: '#d0d0d0', // not satisfied
-}
+  R: "#BB22CA", // primarily residential, satisfied
+  M: "rgba(113, 70, 116, 0.92)", // mixed with residential, satisfied
+  N: "rgba(113, 70, 116, 0.67)", // nonresidential, satisfied
+  NS: "#d0d0d0", // not satisfied
+};
 
 // Columns in the original spreadsheet
 var zName = 'Z'
@@ -420,16 +420,16 @@ var loadHydro = function () {
  */
 var loadHouse = function () {
   $.getJSON('./data/house-districts.min.geojson', function (geojson) {
-    overlays['house'] = L.geoJSON(geojson, {
+    overlays["house"] = L.geoJSON(geojson, {
       interactive: true,
       stroke: true,
-      color: '#C6DDFF',
+      color: "#E06AAA",
       weight: 1,
-      pane: 'overlays',
+      pane: "overlays",
       style: {
         fillOpacity: 0,
       },
-    })
+    });
 
     overlays['house'].eachLayer(function (layer) {
       layer.bindPopup(layer.feature.properties.state_house)
@@ -439,16 +439,16 @@ var loadHouse = function () {
 
 var loadSenate = function () {
   $.getJSON('./data/senate-districts.min.geojson', function (geojson) {
-    overlays['senate'] = L.geoJSON(geojson, {
+    overlays["senate"] = L.geoJSON(geojson, {
       interactive: true,
       stroke: true,
-      color: '#ffb86c',
+      color: "#F8F807",
       weight: 1,
-      pane: 'overlays',
+      pane: "overlays",
       style: {
         fillOpacity: 0,
       },
-    })
+    });
 
     overlays['senate'].eachLayer(function (layer) {
       layer.bindPopup(layer.feature.properties.state_senate)
@@ -490,8 +490,8 @@ var loadFederal = function () {
       weight: 1,
       spaceWeight: 1,
       angle: 30,
-      color: '#b349c6',
-    })
+      color: "#B47A69",
+    });
 
     stripes.addTo(map)
 
@@ -518,8 +518,8 @@ var loadState = function () {
       weight: 1,
       spaceWeight: 1,
       angle: 30,
-      color: '#b349c6',
-    })
+      color: "#FF9C59",
+    });
 
     stripes.addTo(map)
 
@@ -579,11 +579,11 @@ var loadDHHL = function () {
       weight: 1.5,
       spaceWeight: 1,
       angle: -45,
-      color: 'rgb(147, 94, 59)',
-      spaceColor: '#9cb4dc',
+      color: "rgba(250, 174, 123, 0.76)",
+      spaceColor: "#9cb4dc",
       opacity: 0.9,
       spaceOpacity: 0.5,
-    })
+    });
     stripes.addTo(map)
 
     overlays['DHHL'] = L.geoJSON(geojson, {

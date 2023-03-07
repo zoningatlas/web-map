@@ -717,14 +717,7 @@ var initMap = function () {
   })
   // Define the steps for introduction
   driver.defineSteps([
-    /*{
-      element: '#CtZoningAtlas',
-      popover: {
-        title: 'Connecticut Zoning Atlas',
-        description: 'Zoning laws covering nearly every inch of Connecticut tell us what can be built, where.  They say whether we can have single-family housing in one neighborhood, or apartment buildings in another. This interactive map was drawn from our survey of all 2,616 zoning districts in 178 zoning jurisdictions in the state, as well as 2 subdivision-only jurisdictions in the 2 towns without zoning.  We think it shows how outdated zoning laws make it hard to build diverse, affordable housing.',
-        position: 'right'
-      }
-    },*/
+    { element: '#HiZoningAtlas', popover: { title: 'Hawaii Zoning Atlas', description: 'Zoning is the most important local law you've never heard of. Zoning defines where buildings can go, how large they can be, what they can be used for, and more. The current zoning laws prioritize single-family homes on large lots in much of the state, contributing to urban sprawl, traffic congestion, and rising housing costs. Our team read the complete zoning codes for all 4 counties and built this interactive map to show where housing can and can't be built across the state. We hope policymakers and housing advocates can use our data to make housing more affordable and equitable.', position: 'right' } }
     {
       element: '#TypeOfZoningDistrict',
       popover: {

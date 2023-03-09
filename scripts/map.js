@@ -7,8 +7,8 @@ var overlays = {} // An object to contain overlay layer groups, eg `transit`
 
 var zone2color = {
   R: "#BB22CA", // primarily residential, satisfied
-  M: "rgba(113, 70, 116, 0.92)", // mixed with residential, satisfied
-  N: "rgba(113, 70, 116, 0.67)", // nonresidential, satisfied
+  M: "#714674eb", // mixed with residential, satisfied
+  N: "#714674ab", // nonresidential, satisfied
   NS: "#d0d0d0", // not satisfied
 };
 
@@ -579,7 +579,7 @@ var loadDHHL = function () {
       weight: 1.5,
       spaceWeight: 1,
       angle: -45,
-      color: "rgba(250, 174, 123, 0.76)",
+      color: "#FAAE7BC2",
       spaceColor: "#9cb4dc",
       opacity: 0.9,
       spaceOpacity: 0.5,

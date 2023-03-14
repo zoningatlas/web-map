@@ -790,9 +790,9 @@ var initMap = function () {
     {
       element: "#ZoneOpacity",
       popover: {
-        title: "Adjust Zone Opacity",
-        description: "Move the slider to adjust zoning layer transparency.",
-        position: "right",
+        title: 'Adjust Zone Opacity',
+        description: 'Move the slider to adjust zoning layer transparency.',
+        position: 'top',
       },
     },
   ]);

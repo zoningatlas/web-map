@@ -119,7 +119,7 @@ HI,Honolulu,Honolulu,AG-2,AG-2 Agricultural - General,Yes,No,No,Nonresidential,N
 the AG-2 district, the number of farm dwellings shall not exceed one for each two acres of lot area.
 (b) Each farm dwelling and any accessory uses shall be contained within an area not to exceed 5,000 square
 feet of the lot",
-HI,Honolulu,Honolulu,C,C Country,Yes,No,No,Mixed with Residential,No,No,Allowed/Conditional,Allowed/Conditional,Prohibited,Prohibited,1.000,15,10,10,"25%, for nonagricultural structures","None, ""Building area"" includes ""all-weather surfaces"", which are basically roads or concrete pads for building on, but do not include all impervious surfaces","Excluding carport or garage areas: 
+HI,Honolulu,Honolulu,C,C Country,Yes,No,No,Mixed with Residential,No,No,Allowed/Conditional,Allowed/Conditional,Allowed/Conditional,Allowed/Conditional,1.000,15,10,10,"25%, for nonagricultural structures","None, ""Building area"" includes ""all-weather surfaces"", which are basically roads or concrete pads for building on, but do not include all impervious surfaces","Excluding carport or garage areas: 
 2 per unit up to 3,249 square feet
 3 per unit from 3,250 to 3,999 square feet
 4 per unit from 4,000 to 4,749 square feet
@@ -137,8 +137,18 @@ Except if lot has a slope of 15 degrees or greater, in which case the maximum he
 If w/ height setbacks:  25 ft, set back from every side
 and rear buildable area boundary line one foot for each two feet of additional height above 15 feet 
 
-Except if lot has a slope of 15 degrees or greater, in which case the maximum height varies from 20 feet at the edge of the buildable area along to up to 30 feet along a line measured 60 degrees from the horizontal top of the 20 foot heigh. ",None,None,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Not Mentioned,,,,,,,,,,,,Allowed/Conditional,No,No,Yes,No,0.0803,"1, unless ADU is w/in one half-mile of a rail transit station",No,N/A,"400 for lots under 5000 square feet
-800 for lots of or over 5000 square feet",None,Allowed/Conditional,No,3,1,None,"""Country Cluster"" PRD allows for multifamily housing otherwise disallowed, but no more than 4 dwelling units per structure",
+Except if lot has a slope of 15 degrees or greater, in which case the maximum height varies from 20 feet at the edge of the buildable area along to up to 30 feet along a line measured 60 degrees from the horizontal top of the 20 foot heigh. ",None,None,No,No,3,1 dwelling/acre,10/dwelling lot,5/dwelling lot,5/dwelling lot,"25%, for nonagricultural structures","None, ""Building area"" includes ""all-weather surfaces"", which are basically roads or concrete pads for building on, but do not include all impervious surfaces",specified in the approval of the country cluster (PRD) plan,specified in the approval of the country cluster (PRD) plan,Yes,No,N/A,"Baseline: 15 ft    
+
+If w/ height setbacks:  25 ft, set back from every side
+and rear buildable area boundary line one foot for each two feet of additional height above 15 feet 
+
+Except if lot has a slope of 15 degrees or greater, in which case the maximum height varies from 20 feet at the edge of the buildable area along to up to 30 feet along a line measured 60 degrees from the horizontal top of the 20 foot heigh. ",None,None,None,No,No,3,1 dwelling/acre,10/dwelling lot,5/dwelling lot,5/dwelling lot,"25%, for nonagricultural structures","None, ""Building area"" includes ""all-weather surfaces"", which are basically roads or concrete pads for building on, but do not include all impervious surfaces",specified in the approval of the country cluster (PRD) plan,specified in the approval of the country cluster (PRD) plan,Yes,No,N/A,"Baseline: 15 ft    
+
+If w/ height setbacks:  25 ft, set back from every side
+and rear buildable area boundary line one foot for each two feet of additional height above 15 feet 
+
+Except if lot has a slope of 15 degrees or greater, in which case the maximum height varies from 20 feet at the edge of the buildable area along to up to 30 feet along a line measured 60 degrees from the horizontal top of the 20 foot heigh. ",None,None,None,4,Not Mentioned,,,,,,,,,,,,Allowed/Conditional,No,No,Yes,No,0.0803,"1, unless ADU is w/in one half-mile of a rail transit station",No,N/A,"400 for lots under 5000 square feet
+800 for lots of or over 5000 square feet",None,Allowed/Conditional,No,3,1,None,"3 and 4+ family housing allowed, but only in a PRD (""country cluster""), and with no more than 4 dwelling units per structure",
 HI,Honolulu,Honolulu,R-20,R-20 Residential,Yes,No,No,Primarily Residential,No,No,Allowed/Conditional,Allowed/Conditional,Prohibited,Prohibited,0.459,,,,50% of zoning area,75% of zoning area,"2 per unit up to 3,249 square feet
 3 per unit from 3,250 to 3,999 square feet
 4 per unit from 4,000 to 4,749 square feet

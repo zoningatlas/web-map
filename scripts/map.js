@@ -44,8 +44,8 @@ var loadZones = function (geojson) {
 
   dataLayer = L.geoJSON(geojson, {
     attribution:
-      'data by <a href="https://www.codeforhawaii.org/">Kind Volunteers @ Code for Hawaii</a>,\
-      map development by <a href="https://codeforhawaii.org">Code for Hawaii</a>',
+      'data by <a href="https://www.CodeWithAloha.org/">Kind Volunteers @ Code with Aloha</a>,\
+      map development by <a href="https://CodeWithAloha.org">Code with Aloha</a>',
     style: function (feature) {
       return style(filters, feature)
     },

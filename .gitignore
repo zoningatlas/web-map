@@ -45,6 +45,10 @@ bower_components
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# IDE - JupyterNotebooks
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
 # misc
 .sass-cache
 connect.lock

@@ -661,7 +661,7 @@ var initMap = function () {
   setFilters()
 
   // Load town boundaries
-  $.getJSON('./data/counties.geojson', loadTowns)
+  $.getJSON('./data/counties.min.geojson', loadTowns)
 
   // Load main data GeoJSON with zones
   $.getJSON('./data/final.geojson', loadZones)

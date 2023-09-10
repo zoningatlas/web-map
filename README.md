@@ -1,7 +1,7 @@
 <h1 align="center">Hawaii Zoning Atlas</h1>
 
 <div align="center">
-	:earth_americas:
+	:beach_umbrella: :volcano: :globe_with_meridians:
 </div>
 
 <div align="center">
@@ -26,6 +26,12 @@
 This interactive map shows how outdated zoning laws make it hard to build diverse, affordable housing.
 
 Zoning laws, adopted by thousands of local governments across the country, dictate much of what can be built in the United States.  We need to find better ways of helping people understand what zoning codes say, because they have a tremendous impact on our economy, on the environment, and on our society.  A zoning atlas that enables users to visualize the prevalence and nature of regulatory constraints, particularly on housing, can be an important tool to achieve that goal.
+
+### Partners, Supporters, and Sponsors
+
+- [National Zoning Atlas](https://www.zoningatlas.org/)
+- [Mercatus Center](https://www.mercatus.org/)
+- [Faith Action Hawaii](https://www.faithactionhawaii.org/)
 
 ### Resources
 
